@@ -42,7 +42,6 @@ div#logo p {
 #banner .title {
   width: 20rem;
   padding: 2rem 3rem;
-  color: white;
   background: black;
   position: relative;
   top: 9rem;
@@ -62,16 +61,17 @@ div#logo p {
 nav {
   width: 100%;
   background: firebrick;
+  text-align: center;
 }
 
 nav div {
-display: flex;
+  display: flex;
 justify-content: space-between;
 justify-content: space-around;
+padding: .75rem;
 }
 
 nav span {
-  padding: .75rem;
   text-transform: none;
 }
 
@@ -88,7 +88,6 @@ header {
   margin: 3rem auto;
   display: inline-flex;
   justify-content: space-between;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -124,7 +123,6 @@ header {
   background: white;
   display: flex;
   justify-content: space-between;
-  justify-content: space-around;
 }
 
 #location, #hours {
@@ -148,3 +146,115 @@ footer {
   height: 5rem;
   text-align: left;
 }
+
+/* RESPONSIVE */
+
+.tabletview {
+display: none;
+}
+
+.phoneview {
+  display: none;
+}
+
+/* TABLETS */
+
+@media only screen and (min-width: 470px) and (max-width: 1024px) {
+
+  .tabletview {
+  display: flex;
+  }
+
+  .fullscreen {
+    display: none;
+  }
+
+  #banner .title {
+    left: 0;
+  }
+
+  .site-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .product {
+    width: 47%;
+  }
+
+  #glasses {
+    display: none;
+  }
+
+  #location, #hours {
+    width: 35%;
+  }
+
+}
+
+/* PHONE */
+
+@media screen and (max-width: 470px) {
+  .fullscreen {
+    display: none;
+  }
+
+  .tabletview {
+    display: flex;
+    justify-content: center;
+  }
+
+  .site-container {
+    width: 90%;
+  }
+
+    #banner {
+      height: 15rem;
+    }
+
+  #banner .title {
+    left: 0;
+     top: 10rem;
+     padding: 1rem 2rem;
+  }
+
+  #banner .subheading {
+    font-size: .77rem;
+    font-weight: bold;
+    margin: .25rem 0;
+   }
+
+   #banner .heading {
+     font-size: 1rem;
+     font-weight: bold;
+   }
+
+   #glasses, #watch {
+     display: none;
+   }
+
+   .product {
+     width: 100%;
+   }
+
+   #info {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     flex-direction: column;
+     margin-bottom: 3rem;
+   }
+
+   #location, #hours {
+     width: 100%;
+   }
+
+   #info p {
+     padding: .25rem;
+     margin: 0;
+   }
+
+  footer {
+    text-align: center;
+  }
+}/*end phoneview*/
